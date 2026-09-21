@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1340" viewBox="0 0 1120 1340" role="img" aria-labelledby="title desc">
+  <title id="title">LeitCue 产品架构图：创作者工作台、AI编排与数据服务</title>
+  <desc id="desc">真实Alpha的公开脱敏职责图。香港ECS上以Docker Compose部署，HTTPS经Nginx接入Next.js工作台与FastAPI服务。剧情理解、字段编译、源曲分组、异步任务、自动选段与FFmpeg装配通过供应商适配层调用ASR、DeepSeek、Mureka和Stable Audio。PostgreSQL、Redis与私有对象存储分别承载业务状态、队列与缓存、媒体文件。公开静态Demo不运行这些后端服务。</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#faf8ff"/><stop offset="1" stop-color="#f0f5fd"/></linearGradient>
+    <linearGradient id="accent"><stop stop-color="#7560d7"/><stop offset="1" stop-color="#596bdc"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#82789d" stroke-width="1.5"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:#2c273f}
+      .title{font-size:32px;font-weight:700}.section{font-size:25px;font-weight:650}.label{font-size:25px;font-weight:600}.body{font-size:22px;fill:#686079}.small{font-size:20px;fill:#686079}.white{fill:#fff}.line{fill:none;stroke:#82789d;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1120" height="1340" rx="26" fill="url(#bg)"/>
+  <text x="38" y="52" class="title">LeitCue · 乐叙｜产品架构</text>
+  <text x="38" y="91" class="body">整集配乐工作台 · 模型判断与确定性执行分离</text>
+  <rect x="853" y="29" width="231" height="40" rx="20" fill="#eee8ff"/>
+  <text x="968" y="57" text-anchor="middle" class="small" style="fill:#6045a7">ALPHA · 公开脱敏版</text>
+
+  <rect x="28" y="122" width="1064" height="193" rx="24" fill="#fff" stroke="#e1ddeb"/>
+  <text x="52" y="163" class="section">访问与部署层</text>
+  <rect x="52" y="188" width="248" height="97" rx="16" fill="#f3f0ff" stroke="#e0d9f4"/>
+  <text x="74" y="228" class="label">创作者浏览器</text><text x="74" y="263" class="body">上传 · 试听 · 调整</text>
+  <path d="M300 237H340" class="line"/>
+  <rect x="351" y="188" width="267" height="97" rx="16" fill="#f0f4ff" stroke="#dbe2f2"/>
+  <text x="373" y="228" class="label">HTTPS / Nginx</text><text x="373" y="263" class="body">统一入口 · 反向代理</text>
+  <path d="M618 237H658" class="line"/>
+  <rect x="668" y="188" width="396" height="97" rx="16" fill="url(#accent)"/>
+  <text x="692" y="228" class="label white">香港 ECS · 单机容器化</text><text x="692" y="263" class="body white">Docker Compose · Web / API</text>
+  <path d="M485 285V338" class="line"/>
+
+  <rect x="28" y="348" width="694" height="720" rx="24" fill="#fff" stroke="#e1ddeb"/>
+  <text x="52" y="391" class="section">产品与任务编排层</text>
+  <rect x="52" y="415" width="646" height="111" rx="16" fill="#f3f0ff" stroke="#e0d9f4"/>
+  <text x="74" y="453" class="label">Next.js 创作者工作台</text>
+  <text x="74" y="487" class="body">一键生成 / 先看剧情 · 视频对照与局部调整</text>
+  <text x="74" y="513" class="small">邀请码与邮箱登录 · 项目隔离 · 版本与任务状态</text>
+  <path d="M375 526V549" class="line"/>
+  <rect x="52" y="559" width="646" height="91" rx="16" fill="#f5f5fb" stroke="#e1ddeb"/>
+  <text x="74" y="598" class="label">FastAPI · 业务 API 与执行合同</text>
+  <text x="74" y="632" class="body">权限校验 · 参数编译 · 私有媒体访问</text>
+  <path d="M375 650V676" class="line"/>
+  <rect x="52" y="686" width="307" height="136" rx="16" fill="#fff" stroke="#d9d5e1"/>
+  <text x="72" y="727" class="label">01  剧情 → 音乐计划</text>
+  <text x="72" y="764" class="body">证据绑定 · 分层字段</text><text x="72" y="798" class="body">叙事重置 · 用户决定</text>
+  <rect x="391" y="686" width="307" height="136" rx="16" fill="#fff" stroke="#d9d5e1"/>
+  <text x="411" y="727" class="label">02  源曲 → 付费任务</text>
+  <text x="411" y="764" class="body">相容分组 · 预算预留</text><text x="411" y="798" class="body">模型路由 · 防重复提交</text>
+  <path d="M359 752H382" class="line"/>
+  <rect x="52" y="855" width="646" height="90" rx="16" fill="#fff2ec" stroke="#efd4c8"/>
+  <text x="74" y="893" class="label">03  声学粗选 → 确定性整集装配</text>
+  <text x="74" y="928" class="body">片段排序 · FFmpeg 衔接 / 混音 / 成片</text>
+  <path d="M544 822V845" class="line"/>
+  <rect x="52" y="970" width="646" height="73" rx="16" fill="#f5f5fb" stroke="#e1ddeb"/>
+  <text x="74" y="1000" class="label">统一异步执行层</text>
+  <text x="74" y="1031" class="body">Outbox · 队列 · Worker · 调度查询与恢复</text>
+
+  <rect x="762" y="348" width="330" height="720" rx="24" fill="#fff7df" stroke="#ecdfb7"/>
+  <text x="785" y="391" class="section">外部 AI 服务</text>
+  <text x="785" y="425" class="small">通过供应商适配层调用</text>
+  <path d="M722 739H751" class="line"/>
+  <rect x="784" y="449" width="286" height="112" rx="16" fill="#fff" stroke="#eddfb8"/>
+  <text x="804" y="488" class="label">ASR 语音转写</text><text x="804" y="522" class="body">对白文本与时间戳</text><text x="804" y="548" class="small">供应商可替换，状态见文档</text>
+  <rect x="784" y="588" width="286" height="112" rx="16" fill="#fff" stroke="#eddfb8"/>
+  <text x="804" y="627" class="label">DeepSeek</text><text x="804" y="661" class="body">台词与采样画面</text><text x="804" y="687" class="small">剧情观察与分层音乐意图</text>
+  <rect x="784" y="727" width="286" height="112" rx="16" fill="#fff" stroke="#eddfb8"/>
+  <text x="804" y="766" class="label">Mureka 中国版</text><text x="804" y="800" class="body">节奏 / 动机型源曲</text><text x="804" y="826" class="small">仅音乐描述，不上传视频</text>
+  <rect x="784" y="866" width="286" height="112" rx="16" fill="#fff" stroke="#eddfb8"/>
+  <text x="804" y="905" class="label">Stable Audio</text><text x="804" y="939" class="body">氛围型源曲</text><text x="804" y="965" class="small">预留时长，供剪辑与衔接</text>
+  <text x="785" y="1025" class="small">结果回流 → 归档 / 选段 / 装配</text>
+
+  <path d="M375 1068V1096" class="line"/>
+  <rect x="28" y="1106" width="1064" height="172" rx="24" fill="#e8f7f2" stroke="#cde8de"/>
+  <text x="52" y="1146" class="section">数据与持久化</text>
+  <rect x="52" y="1167" width="314" height="85" rx="15" fill="#fff" stroke="#c9e0d7"/>
+  <text x="72" y="1203" class="label">PostgreSQL</text><text x="72" y="1235" class="body">任务 · 方案版本 · 账本</text>
+  <rect x="390" y="1167" width="291" height="85" rx="15" fill="#fff" stroke="#c9e0d7"/>
+  <text x="410" y="1203" class="label">Redis</text><text x="410" y="1235" class="body">队列 · 缓存与限流</text>
+  <rect x="705" y="1167" width="359" height="85" rx="15" fill="#fff" stroke="#c9e0d7"/>
+  <text x="725" y="1203" class="label">私有对象存储</text><text x="725" y="1235" class="body">原视频 · 源曲 · 预览与成片</text>
+  <text x="38" y="1317" class="small">边界：粗选 ≠ 审美裁判 · 未知提交不盲重试 · 公开静态 Demo 不运行上述后端</text>
+</svg>

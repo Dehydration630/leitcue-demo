@@ -4,6 +4,11 @@
 
 ## 1. 创作者流程：同一能力，两种控制程度
 
+![竖版产品流程](../assets/product-flow.svg)
+
+<details>
+<summary>展开流程图的 Mermaid 文本版本（含预算分支）</summary>
+
 ```mermaid
 flowchart TD
   U[新建项目 / 上传待配乐视频] --> A[转写 + 画面采样 + 剧情观察]
@@ -23,16 +28,27 @@ flowchart TD
   Listen --> Export[导出当前保存版本]
 ```
 
+</details>
+
 ## 2. 系统架构：让模型做判断，让程序负责执行
 
+![LeitCue 分层产品架构](../assets/product-architecture.svg)
+
+部署基线是香港 ECS 上的 Docker Compose 单机 Alpha，HTTPS 经 Nginx 接入 Next.js 与 FastAPI，不是参考排版案例中的 veFaaS 架构。PostgreSQL 保存业务状态，Redis 支持队列、缓存与限流，私有对象存储承载媒体；省略了具体资源与连接信息。
+
+**ASR 状态（2026-09-21）**：线上最后确认版本仍使用 Eleven Scribe；Paraformer 的持久化接入已本地完成、发布准备完成，但尚未确认生产切换。图中以可替换的 ASR 适配层表示，避免将准备完成误写成已经上线。
+
+<details>
+<summary>展开系统依赖的 Mermaid 文本版本</summary>
+
 ```mermaid
-flowchart LR
+flowchart TB
   UI[Next.js 创作者工作台] --> API[API / 身份与项目隔离]
   API --> DB[(PostgreSQL 状态与版本)]
   API --> OBJ[(私有对象存储)]
   API --> Q[队列 / Worker / 调度器]
   Q --> Analysis[转写 / 采样 / 剧情分析]
-  Analysis --> LLM[Eleven Scribe / DeepSeek]
+  Analysis --> LLM[ASR 转写适配器 / DeepSeek]
   Analysis --> Fields[来源绑定 / 分层字段编译]
   Fields --> Plan[边界 / 源曲分组 / 预算预留]
   Plan --> Adapter[音乐适配器]
@@ -46,6 +62,8 @@ flowchart LR
   DB --> UI
   OBJ -->|限时访问| UI
 ```
+
+</details>
 
 **关键边界**：上游分析原稿不可被后处理改写；Cue不等于一次付费调用；生成结果不等于可发布；原视频不发送给当前文本Mureka链路；私有媒体访问与公开作品集完全隔离。
 

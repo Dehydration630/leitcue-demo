@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1450" viewBox="0 0 760 1450" role="img" aria-labelledby="title desc">
+  <title id="title">LeitCue 竖版产品流程图</title>
+  <desc id="desc">上传视频，提取对白与画面证据，形成分层音乐计划。一键生成或由创作者先调整剧情安排，两条路径汇合到边界编译、源曲分组和预算检查，再进行音乐生成、自动粗选、确定性装配，最终试听、调整与导出。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#817994" stroke-width="1.5"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:#292538}
+      .heading{font-size:29px;font-weight:700}.label{font-size:25px;font-weight:650}.body{font-size:21px;fill:#645d74}.num{font-size:22px;font-weight:700;fill:#a63d42}.line{fill:none;stroke:#817994;stroke-width:2;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="760" height="1450" rx="24" fill="#f8f7fc"/>
+  <text x="40" y="52" class="heading">LeitCue · 从视频到整集配乐</text>
+  <text x="40" y="88" class="body">同一条创作链路，两种控制程度</text>
+  <g>
+    <rect x="60" y="120" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="162" class="num">01</text><text x="134" y="162" class="label">新建项目 · 上传待配乐视频</text>
+    <text x="134" y="200" class="body">保留原对白与音效，不要求手动切片</text>
+    <path d="M380 232V264" class="line"/>
+    <rect x="60" y="274" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="316" class="num">02</text><text x="134" y="316" class="label">转写与画面采样 · 剧情理解</text>
+    <text x="134" y="354" class="body">提取事件、时间和证据，保留分析原稿</text>
+    <path d="M380 386V418" class="line"/>
+    <rect x="60" y="428" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="470" class="num">03</text><text x="134" y="470" class="label">音乐计划 · 分层字段</text>
+    <text x="134" y="508" class="body">全局风格 → 分段意图 → 局部回应</text>
+    <path d="M380 540V558H205V580" class="line"/><path d="M380 558H555V580" class="line"/>
+    <rect x="40" y="590" width="330" height="132" rx="18" fill="#fff0eb" stroke="#edc3b7"/>
+    <text x="205" y="632" text-anchor="middle" class="label">一键生成</text>
+    <text x="205" y="667" text-anchor="middle" class="body">按系统建议自动推进</text>
+    <text x="205" y="698" text-anchor="middle" class="body">不增加中途审批</text>
+    <rect x="390" y="590" width="330" height="132" rx="18" fill="#efedff" stroke="#d7d0f2"/>
+    <text x="555" y="632" text-anchor="middle" class="label">先看看剧情安排</text>
+    <text x="555" y="667" text-anchor="middle" class="body">对照视频，用普通语言</text>
+    <text x="555" y="698" text-anchor="middle" class="body">决定保持连续或换音乐</text>
+    <path d="M205 722V746H380V772" class="line"/><path d="M555 722V746H380" fill="none" stroke="#817994" stroke-width="2"/>
+    <rect x="60" y="782" width="640" height="140" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="824" class="num">04</text><text x="134" y="824" class="label">边界编译 · 源曲分组 · 预算检查</text>
+    <text x="134" y="862" class="body">默认连续，叙事重置才考虑换音乐</text>
+    <text x="134" y="894" class="body">先判断复用，再按独立源曲预留费用</text>
+    <path d="M380 922V954" class="line"/>
+    <rect x="60" y="964" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="1006" class="num">05</text><text x="134" y="1006" class="label">按音乐功能路由 · 异步生成</text>
+    <text x="134" y="1044" class="body">Mureka：节奏与动机 / Stable Audio：氛围</text>
+    <path d="M380 1076V1108" class="line"/>
+    <rect x="60" y="1118" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
+    <text x="86" y="1160" class="num">06</text><text x="134" y="1160" class="label">自动选段 · 确定性整集装配</text>
+    <text x="134" y="1198" class="body">源曲粗选、衔接、混音，保留原音</text>
+    <path d="M380 1230V1262" class="line"/>
+    <rect x="60" y="1272" width="640" height="112" rx="18" fill="#e9f6f0" stroke="#bcded0"/>
+    <text x="86" y="1314" class="num">07</text><text x="134" y="1314" class="label">试听 · 局部调整 · 导出整集</text>
+    <text x="134" y="1352" class="body">创作者判断能否采用，不以生成成功代替质量</text>
+  </g>
+  <text x="380" y="1421" text-anchor="middle" class="body">预算不足或任务异常：保留进度并解释原因，不盲目重发</text>
+</svg>

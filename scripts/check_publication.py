@@ -9,6 +9,7 @@ ALLOWED = {
     "README.md", "NOTICE.md", "index.html",
     "assets/app.mjs", "assets/logic.mjs", "assets/style.css",
     "assets/cover.svg", "assets/icon.svg",
+    "assets/product-flow.svg", "assets/product-architecture.svg",
     "examples/core.py", "examples/scenario.json", "examples/README.md",
     "tests/test_core.py", "tests/demo.test.mjs", "scripts/check_publication.py",
     *{f"docs/{name}.md" for name in (
