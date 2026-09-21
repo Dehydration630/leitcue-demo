@@ -25,7 +25,7 @@
   <text x="373" y="228" class="label">HTTPS / Nginx</text><text x="373" y="263" class="body">统一入口 · 反向代理</text>
   <path d="M618 237H658" class="line"/>
   <rect x="668" y="188" width="396" height="97" rx="16" fill="url(#accent)"/>
-  <text x="692" y="228" class="label white">香港 ECS · 单机容器化</text><text x="692" y="263" class="body white">Docker Compose · Web / API</text>
+  <text x="692" y="228" class="label white">ECS · 单机容器化</text><text x="692" y="263" class="body white">Docker Compose · Web / API</text>
   <path d="M485 285V338" class="line"/>
 
   <rect x="28" y="348" width="694" height="720" rx="24" fill="#fff" stroke="#e1ddeb"/>
@@ -77,5 +77,5 @@
   <text x="410" y="1203" class="label">Redis</text><text x="410" y="1235" class="body">队列 · 缓存与限流</text>
   <rect x="705" y="1167" width="359" height="85" rx="15" fill="#fff" stroke="#c9e0d7"/>
   <text x="725" y="1203" class="label">私有对象存储</text><text x="725" y="1235" class="body">原视频 · 源曲 · 预览与成片</text>
-  <text x="38" y="1317" class="small">边界：粗选 ≠ 审美裁判 · 未知提交不盲重试 · 公开静态 Demo 不运行上述后端</text>
+  <text x="38" y="1317" class="small">边界：粗选 ≠ 审美裁判 · 未知提交不盲重试</text>
 </svg>
