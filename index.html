@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LeitCue 乐叙：AI 整集剧情配乐产品经理作品集。使用合成数据的交互演示，无模型调用。">
+  <title>LeitCue 乐叙 · 产品交互 Demo</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="./"><img src="assets/icon.svg" alt="" width="36" height="36"><span>LeitCue<small>乐叙 / Story to score</small></span></a>
+    <div class="side-label">创作工作区</div>
+    <button class="side-link active" id="workspace-tab"><span>▦</span> 整集配乐</button>
+    <a class="side-link" href="https://github.com/Dehydration630/leitcue-demo"><span>↗</span> 项目 README</a>
+    <a class="side-link" href="https://github.com/Dehydration630/leitcue-demo/blob/main/docs/CASE_STUDY.md"><span>◇</span> 设计与复盘</a>
+    <div class="side-label projects-label">示例作品</div>
+    <button class="project-card selected" data-scene="modern"><span class="mini-art modern">01</span><span>回声来信<small>现代剧情 · 45 秒</small></span></button>
+    <button class="project-card" data-scene="palace"><span class="mini-art palace">02</span><span>长廊之后<small>宫廷剧情 · 120 秒</small></span></button>
+    <div class="sidebar-note"><span class="dot"></span> 作品集展示版<p>虚构剧情 · 预置结果<br>不上传素材，不调用模型</p></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>WORKSPACE <span class="muted">/</span> EPISODE</span><a href="https://github.com/Dehydration630/leitcue-demo/blob/main/docs/PRD.md">阅读 PRD <span>↗</span></a></header>
+    <div class="demo-notice"><span>INTERACTIVE DEMO</span> 当前为静态模拟，不是真实配乐生成或音频试听。</div>
+    <section class="heading-row"><div><div class="eyebrow">让故事，为音乐标出方向</div><h1 id="project-title">回声来信<span>第 01 集</span></h1><p id="project-description">一个房间，一封来信。真正的变化，只需要发生一次。</p></div><button id="restart" class="button secondary">重置演示 ↺</button></section>
+    <section class="toolbar" aria-label="创作入口"><div><span class="status-dot"></span><strong id="flow-status">示例方案已就绪</strong><small id="flow-detail">体验两种路径：直接创作，或先决定音乐在哪里变化。</small></div><div class="actions"><button id="arrange" class="button secondary">先看看剧情安排</button><button id="generate" class="button primary">一键演示整集配乐 <span>↗</span></button></div></section>
+    <div id="progress" class="progress hidden" role="status" aria-live="polite"></div>
+    <section class="studio">
+      <div class="main-panel">
+        <div class="panel-top"><h2>故事与配乐</h2><span class="pill" id="duration-pill">45 秒 · 原创虚构示例</span></div>
+        <div class="screen" id="screen">
+          <div class="scene-code" id="scene-code">STUDIO / 01</div><div class="light-beam"></div><div class="window-line"></div><div class="person person-a"></div><div class="person person-b"></div><div class="table"></div>
+          <div class="screen-top"><span>剧情示意 · 非真实视频</span><span id="frame-count">00:00 / 00:45</span></div>
+          <div class="screen-caption"><span id="scene-role">开场对峙</span><p id="subtitle">“这封信，你什么时候收到的？”</p><small>原创虚构台词，不对应任何真实作品</small></div>
+        </div>
+        <div class="transport"><button id="play" class="play" aria-label="播放模拟时间轴">▶</button><input id="seek" type="range" min="0" max="45" value="0" step="0.1" aria-label="模拟视频时间"><output id="time">00:00</output><span class="muted silent">无音频</span></div>
+        <div class="timeline-head"><span>音乐安排</span><span id="cue-count">2 段 · 只在必要时变化</span></div>
+        <div class="ruler" id="ruler"></div><div id="timeline" class="timeline" aria-label="音乐段落时间轴"></div>
+        <div class="legend"><span><i class="coral"></i>节奏与动机</span><span><i class="purple"></i>氛围承托</span><span>纹理仅为图形示意，非音频波形</span></div>
+        <section class="insight"><span>为什么不是每次切镜都换音乐？</span><p id="insight-text">同一场景内保持连续；39秒的主导关系重置，才让音乐换一种感觉。</p><a href="https://github.com/Dehydration630/leitcue-demo/blob/main/docs/DECISIONS.md">查看产品取舍 →</a></section>
+      </div>
+      <aside class="control-panel" aria-label="剧情安排与局部调整">
+        <div class="control-tabs"><button id="tab-adjust" class="tab selected" aria-selected="true">局部调整</button><button id="tab-story" class="tab" aria-selected="false">剧情节点</button></div>
+        <div id="adjust-panel"><div class="control-intro"><h2>让每一段，各司其职</h2><p>切换示例片段，了解选段与源曲的区别。</p></div><div id="cue-cards"></div><div class="mix"><label for="volume">原音与音乐的平衡 <output id="volume-output">音乐 35%</output></label><input id="volume" type="range" min="0" max="100" value="35"><p>只演示界面状态，不产生实际混音。</p></div><button class="button secondary full" id="save">保存示例调整</button></div>
+        <div id="story-panel" class="hidden"><div class="control-intro"><h2>哪里需要换一个感觉？</h2><p id="limits">本集45秒 · 最多4段</p></div><div class="choice-tools"><button id="continuous" class="text-button">整段保持一首</button><button id="suggested" class="text-button">采用系统建议</button></div><div id="events"></div><label class="custom-label" for="custom-time">自定义变化位置（秒）</label><div class="custom"><input id="custom-time" type="number" min="5" max="40" step="0.5" placeholder="例如 20"><button id="add-boundary" class="button secondary">添加</button></div><p id="choice-error" class="error" role="alert"></p><p class="small-note">最短5秒。数量是上限，不是目标；取消变化不等于忽略剧情。</p><button id="confirm-plan" class="button primary full">按这个安排演示</button></div>
+      </aside>
+    </section>
+    <section class="delivery"><div><span class="eyebrow">当前示例版本</span><h2>从一个提示词，到一集完整安排</h2><p id="cost-summary">示例预留，不是供应商实际报价。</p></div><button id="export" class="button primary">导出示例方案 JSON ↓</button></section>
+    <footer><p>这是 <a href="https://github.com/Dehydration630/leitcue-demo">LeitCue 产品经理作品集</a> 的静态展示。真实 Alpha 与此 Demo 的能力边界见 README。</p><span>无账号 · 无上传 · 无模型费用 · 无追踪脚本</span></footer>
+  </main>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <noscript><p>此页面需要 JavaScript 展示模拟交互。可直接在 GitHub 阅读产品文档。</p></noscript>
+  <script type="module" src="assets/app.mjs"></script>
+</body>
+</html>

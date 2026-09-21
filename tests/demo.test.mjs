@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {cap,validate,windows,scenarios,labelTime} from '../assets/logic.mjs';
+test('strict density limit, never quota',()=>{assert.equal(cap(45),4);assert.equal(cap(40),3);assert.equal(cap(120),11);assert.equal(windows(45,[]).length,1);});
+test('synthetic scenarios are valid and cover full duration',()=>{for(const s of Object.values(scenarios)){assert.equal(validate(s.duration,s.suggested),'');const w=windows(s.duration,s.suggested);assert.equal(w[0].start,0);assert.equal(w.at(-1).end,s.duration);}});
+test('six-second final reset retained',()=>assert.deepEqual(windows(45,[39]),[{start:0,end:39},{start:39,end:45}]));
+test('reject near boundary, duplicates and too many',()=>{for(const b of [[2],[43],[20,20],[10,14],[5,10,15,20]])assert.notEqual(validate(45,b),'');});
+test('empty or nonfinite time is not valid',()=>{assert.notEqual(validate(45,[NaN]),'');assert.notEqual(validate(45,[Infinity]),'');});
+test('sorting does not mutate creator choice',()=>{const b=[30,10];assert.deepEqual(windows(45,b),[{start:0,end:10},{start:10,end:30},{start:30,end:45}]);assert.deepEqual(b,[30,10]);});
+test('formatted elapsed time',()=>{assert.equal(labelTime(39.5),'00:39');assert.equal(labelTime(120),'02:00');});
