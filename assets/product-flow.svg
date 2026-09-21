@@ -28,7 +28,7 @@
   <rect x="290" y="393" width="580" height="762" rx="18" fill="#efedff" stroke="#d7d0f2"/>
   <text x="312" y="429" class="label accent">先看看剧情安排 · 创作者可控分支</text>
   <rect x="310" y="452" width="540" height="201" rx="13" class="box"/>
-  <text x="330" y="482" class="label">A  怎么呈现：视频与剧情节点同屏</text>
+  <text x="330" y="482" class="label">A  呈现方式：视频与剧情节点同屏</text>
   <rect x="330" y="501" width="172" height="110" rx="9" fill="#f5f4f8" stroke="#e0dbe8"/>
   <path d="M400 522L400 552L424 537Z" fill="#9689b2"/>
   <text x="416" y="578" text-anchor="middle" class="body">原视频对照</text>
@@ -40,14 +40,14 @@
   <text x="330" y="638" class="body">点击「看这一处」→ 视频定位到该节点，判断是否真要换音乐</text>
   <path d="M580 653V671" class="line"/>
   <rect x="310" y="681" width="540" height="166" rx="13" class="box"/>
-  <text x="330" y="713" class="label">B  能做什么：决定音乐的变化位置</text>
+  <text x="330" y="713" class="label">B  用户交互：决定音乐的变化位置</text>
   <text x="330" y="745" class="body">逐节点勾选 / 取消「从这里换一种音乐」</text>
   <text x="330" y="774" class="body">「整段保持一首」清空分界 / 「采用系统建议」恢复建议</text>
   <text x="330" y="803" class="body">输入自定义时间（秒）→ 加入位置；也可单独取消该位置</text>
   <text x="330" y="831" class="body accent">不需要填写 Cue、BPM 或专业音乐参数</text>
   <path d="M580 847V865" class="line"/>
   <rect x="310" y="875" width="540" height="109" rx="13" class="box"/>
-  <text x="330" y="907" class="label">C  看选择结果：「你的安排」即时汇总</text>
+  <text x="330" y="907" class="label">C  预览结果：「你的安排」即时汇总</text>
   <text x="330" y="936" class="body">显示换音乐时刻与总段数；不选位置则整段保持一首</text>
   <text x="330" y="964" class="body">检查每段至少 5 秒及全片段数上限；冲突时留在本页调整</text>
   <path d="M580 984V1002" class="line"/>
