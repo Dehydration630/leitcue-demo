@@ -1,54 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="1450" viewBox="0 0 760 1450" role="img" aria-labelledby="title desc">
-  <title id="title">LeitCue 竖版产品流程图</title>
-  <desc id="desc">上传视频，提取对白与画面证据，形成分层音乐计划。一键生成或由创作者先调整剧情安排，两条路径汇合到边界编译、源曲分组和预算检查，再进行音乐生成、自动粗选、确定性装配，最终试听、调整与导出。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1710" viewBox="0 0 900 1710" role="img" aria-labelledby="title desc">
+  <title id="title">LeitCue 产品流程：一键生成与创作者剧情安排</title>
+  <desc id="desc">上传后选择模式，两种模式共用转写、采样和剧情分析。一键生成自动采用系统建议。先看看剧情安排展示原视频与带时间的普通语言剧情节点，支持跳转画面、勾选或取消换音乐、保持一首、采用建议和自定义时间。安排摘要即时显示换音乐时刻和段数，经时长与数量校验后由用户确认。选择决定音乐边界，未选节点保持连续且仍可有局部回应；不改写分析原稿、不重复剧情分析。两条路径汇合到源曲分组与预算、模型生成、粗选装配、试听调整及导出。</desc>
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#817994" stroke-width="1.5"/></marker>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 9 5 1 9" fill="none" stroke="#8b829e" stroke-width="1.5"/></marker>
     <style>
       text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;fill:#292538}
-      .heading{font-size:29px;font-weight:700}.label{font-size:25px;font-weight:650}.body{font-size:21px;fill:#645d74}.num{font-size:22px;font-weight:700;fill:#a63d42}.line{fill:none;stroke:#817994;stroke-width:2;marker-end:url(#arrow)}
+      .heading{font-size:26px;font-weight:700}.label{font-size:20px;font-weight:650}.body{font-size:17px;fill:#5e566e}.num{font-size:18px;font-weight:700;fill:#a63d42}.accent{fill:#624cad}.line{fill:none;stroke:#8b829e;stroke-width:1.8;marker-end:url(#arrow)}.box{fill:#fff;stroke:#ded9e8}
     </style>
   </defs>
-  <rect width="760" height="1450" rx="24" fill="#f8f7fc"/>
-  <text x="40" y="52" class="heading">LeitCue · 从视频到整集配乐</text>
-  <text x="40" y="88" class="body">同一条创作链路，两种控制程度</text>
-  <g>
-    <rect x="60" y="120" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="162" class="num">01</text><text x="134" y="162" class="label">新建项目 · 上传待配乐视频</text>
-    <text x="134" y="200" class="body">保留原对白与音效，不要求手动切片</text>
-    <path d="M380 232V264" class="line"/>
-    <rect x="60" y="274" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="316" class="num">02</text><text x="134" y="316" class="label">转写与画面采样 · 剧情理解</text>
-    <text x="134" y="354" class="body">提取事件、时间和证据，保留分析原稿</text>
-    <path d="M380 386V418" class="line"/>
-    <rect x="60" y="428" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="470" class="num">03</text><text x="134" y="470" class="label">音乐计划 · 分层字段</text>
-    <text x="134" y="508" class="body">全局风格 → 分段意图 → 局部回应</text>
-    <path d="M380 540V558H205V580" class="line"/><path d="M380 558H555V580" class="line"/>
-    <rect x="40" y="590" width="330" height="132" rx="18" fill="#fff0eb" stroke="#edc3b7"/>
-    <text x="205" y="632" text-anchor="middle" class="label">一键生成</text>
-    <text x="205" y="667" text-anchor="middle" class="body">按系统建议自动推进</text>
-    <text x="205" y="698" text-anchor="middle" class="body">不增加中途审批</text>
-    <rect x="390" y="590" width="330" height="132" rx="18" fill="#efedff" stroke="#d7d0f2"/>
-    <text x="555" y="632" text-anchor="middle" class="label">先看看剧情安排</text>
-    <text x="555" y="667" text-anchor="middle" class="body">对照视频，用普通语言</text>
-    <text x="555" y="698" text-anchor="middle" class="body">决定保持连续或换音乐</text>
-    <path d="M205 722V746H380V772" class="line"/><path d="M555 722V746H380" fill="none" stroke="#817994" stroke-width="2"/>
-    <rect x="60" y="782" width="640" height="140" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="824" class="num">04</text><text x="134" y="824" class="label">边界编译 · 源曲分组 · 预算检查</text>
-    <text x="134" y="862" class="body">默认连续，叙事重置才考虑换音乐</text>
-    <text x="134" y="894" class="body">先判断复用，再按独立源曲预留费用</text>
-    <path d="M380 922V954" class="line"/>
-    <rect x="60" y="964" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="1006" class="num">05</text><text x="134" y="1006" class="label">按音乐功能路由 · 异步生成</text>
-    <text x="134" y="1044" class="body">Mureka：节奏与动机 / Stable Audio：氛围</text>
-    <path d="M380 1076V1108" class="line"/>
-    <rect x="60" y="1118" width="640" height="112" rx="18" fill="#fff" stroke="#ded9e8"/>
-    <text x="86" y="1160" class="num">06</text><text x="134" y="1160" class="label">自动选段 · 确定性整集装配</text>
-    <text x="134" y="1198" class="body">源曲粗选、衔接、混音，保留原音</text>
-    <path d="M380 1230V1262" class="line"/>
-    <rect x="60" y="1272" width="640" height="112" rx="18" fill="#e9f6f0" stroke="#bcded0"/>
-    <text x="86" y="1314" class="num">07</text><text x="134" y="1314" class="label">试听 · 局部调整 · 导出整集</text>
-    <text x="134" y="1352" class="body">创作者判断能否采用，不以生成成功代替质量</text>
-  </g>
-  <text x="380" y="1421" text-anchor="middle" class="body">预算不足或任务异常：保留进度并解释原因，不盲目重发</text>
+  <rect width="900" height="1710" rx="22" fill="#f8f7fc"/>
+  <text x="36" y="46" class="heading">LeitCue · 从剧情理解到整集交付</text>
+  <text x="36" y="77" class="body">上传后选择模式：自动推进，或先决定哪些地方需要换音乐</text>
+  <rect x="100" y="105" width="700" height="78" rx="15" class="box"/>
+  <text x="122" y="137" class="num">01</text><text x="161" y="137" class="label">新建项目 · 上传待配乐视频</text>
+  <text x="161" y="166" class="body">保留原对白与音效，不要求手动切片</text>
+  <path d="M450 183V215" class="line"/>
+  <rect x="100" y="225" width="700" height="103" rx="15" class="box"/>
+  <text x="122" y="257" class="num">02</text><text x="161" y="257" class="label">共用分析 · 建立剧情与音乐计划</text>
+  <text x="161" y="286" class="body">转写与画面采样 → 带时间的剧情节点 → 分层音乐意图</text>
+  <text x="161" y="311" class="body">保留观察证据与原稿；此时尚未开始音乐生成</text>
+  <path d="M450 328V353H145V383" class="line"/><path d="M450 353H580V383" class="line"/>
+  <rect x="30" y="393" width="230" height="133" rx="16" fill="#fff0eb" stroke="#edc3b7"/>
+  <text x="145" y="429" text-anchor="middle" class="label">一键生成</text>
+  <text x="145" y="462" text-anchor="middle" class="body">采用系统建议的音乐边界</text>
+  <text x="145" y="489" text-anchor="middle" class="body">默认连续，切镜不等于换曲</text>
+  <text x="145" y="514" text-anchor="middle" class="body">无需停留在安排页</text>
+  <rect x="290" y="393" width="580" height="762" rx="18" fill="#efedff" stroke="#d7d0f2"/>
+  <text x="312" y="429" class="label accent">先看看剧情安排 · 创作者可控分支</text>
+  <rect x="310" y="452" width="540" height="201" rx="13" class="box"/>
+  <text x="330" y="482" class="label">A  怎么呈现：视频与剧情节点同屏</text>
+  <rect x="330" y="501" width="172" height="110" rx="9" fill="#f5f4f8" stroke="#e0dbe8"/>
+  <path d="M400 522L400 552L424 537Z" fill="#9689b2"/>
+  <text x="416" y="578" text-anchor="middle" class="body">原视频对照</text>
+  <text x="416" y="601" text-anchor="middle" class="body">播放 / 暂停 / 跳转</text>
+  <rect x="520" y="501" width="310" height="110" rx="9" fill="#faf9fd" stroke="#e0dbe8"/>
+  <text x="534" y="527" class="body">时间 + 剧情描述 + 系统建议标记</text>
+  <text x="534" y="557" class="body">示意：18.0 秒 · 两人短暂对视</text>
+  <text x="534" y="587" class="body">示意：39.0 秒 · 新人物改变局面</text>
+  <text x="330" y="638" class="body">点击「看这一处」→ 视频定位到该节点，判断是否真要换音乐</text>
+  <path d="M580 653V671" class="line"/>
+  <rect x="310" y="681" width="540" height="166" rx="13" class="box"/>
+  <text x="330" y="713" class="label">B  能做什么：决定音乐的变化位置</text>
+  <text x="330" y="745" class="body">逐节点勾选 / 取消「从这里换一种音乐」</text>
+  <text x="330" y="774" class="body">「整段保持一首」清空分界 / 「采用系统建议」恢复建议</text>
+  <text x="330" y="803" class="body">输入自定义时间（秒）→ 加入位置；也可单独取消该位置</text>
+  <text x="330" y="831" class="body accent">不需要填写 Cue、BPM 或专业音乐参数</text>
+  <path d="M580 847V865" class="line"/>
+  <rect x="310" y="875" width="540" height="109" rx="13" class="box"/>
+  <text x="330" y="907" class="label">C  看选择结果：「你的安排」即时汇总</text>
+  <text x="330" y="936" class="body">显示换音乐时刻与总段数；不选位置则整段保持一首</text>
+  <text x="330" y="964" class="body">检查每段至少 5 秒及全片段数上限；冲突时留在本页调整</text>
+  <path d="M580 984V1002" class="line"/>
+  <rect x="365" y="1012" width="430" height="48" rx="12" fill="#7461bf"/>
+  <text x="580" y="1043" text-anchor="middle" class="label" style="fill:#fff">确认：「按这个安排生成配乐」</text>
+  <text x="330" y="1093" class="body">选择 → 编译实际音乐边界，影响分段时长与后续源曲计划</text>
+  <text x="330" y="1119" class="body">未选节点保持连续，仍可局部回应；不保证精确卡点</text>
+  <text x="330" y="1144" class="body">不改写剧情原稿；沿用已完成分析，不重复请求剧情理解</text>
+  <path d="M145 526V1180H450V1202" class="line"/>
+  <text x="164" y="883" class="body">自动路径</text><text x="164" y="909" class="body">直接继续</text>
+  <path d="M580 1155V1180H450" fill="none" stroke="#8b829e" stroke-width="1.8"/>
+  <rect x="100" y="1212" width="700" height="106" rx="15" class="box"/>
+  <text x="122" y="1244" class="num">03</text><text x="161" y="1244" class="label">执行计划 · 源曲分组 · 预算检查</text>
+  <text x="161" y="1273" class="body">用户位置优先于自动建议，但仍遵守时长、数量与费用约束</text>
+  <text x="161" y="1299" class="body">按分段重编译配乐计划 → 判断相容源曲能否复用 → 预留生成费用</text>
+  <path d="M450 1318V1345" class="line"/>
+  <rect x="100" y="1355" width="700" height="78" rx="15" class="box"/>
+  <text x="122" y="1387" class="num">04</text><text x="161" y="1387" class="label">按功能路由 · 异步生成源曲</text>
+  <text x="161" y="1416" class="body">Mureka：节奏与动机 / Stable Audio：氛围；一段不等于一次付费调用</text>
+  <path d="M450 1433V1460" class="line"/>
+  <rect x="100" y="1470" width="700" height="78" rx="15" class="box"/>
+  <text x="122" y="1502" class="num">05</text><text x="161" y="1502" class="label">自动选段 · 确定性整集装配</text>
+  <text x="161" y="1531" class="body">根据各段用途与时长粗选片段，再衔接、混音与合成，保留原音</text>
+  <path d="M450 1548V1575" class="line"/>
+  <rect x="100" y="1585" width="700" height="78" rx="15" fill="#e9f6f0" stroke="#bcded0"/>
+  <text x="122" y="1617" class="num">06</text><text x="161" y="1617" class="label">试听 · 局部调整 · 导出整集</text>
+  <text x="161" y="1646" class="body">更换选段、调整音量并保存合成；是否可发布仍由创作者判断</text>
+  <text x="450" y="1694" text-anchor="middle" class="body">预算不足或任务异常：保留已完成内容，解释原因，不盲目重复付费请求</text>
 </svg>
