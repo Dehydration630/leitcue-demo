@@ -2,13 +2,11 @@
 
 # LeitCue · 乐叙
 
-**面向 AI 漫剧与剧情短视频的整集配乐工作台｜AI 产品经理作品集**
+**面向 AI 漫剧与剧情短视频的整集配乐工作台｜Demo**
 
 把「找一首好听的歌」转化为「交付一集可以使用的配乐」：理解剧情，决定音乐何时连续、何时变化，调用合适的模型，再选段、衔接和导出。
 
 [体验交互 Demo](https://dehydration630.github.io/leitcue-demo/) · [产品需求 PRD](docs/PRD.md) · [设计决策与复盘](docs/DECISIONS.md) · [架构与流程](docs/ARCHITECTURE.md) · [测试与验收](docs/TESTING.md)
-
-> 这是**独立、脱敏的公开展示仓库**，不是生产系统源码或真实音乐生成服务。Demo 使用原创虚构剧情与预置结果，不上传视频、不调用模型、不播放真实作品。真实产品已完成封闭 Alpha 部署和项目负责人自测；尚未证明大规模留存、付费转化或跨题材稳定可用率。更新时间：2026-09-21。
 
 ## 30 秒了解项目
 
@@ -25,11 +23,11 @@
 
 ## 建议阅读路径
 
-**招聘方 / 3 分钟**：本页 → [一页案例](docs/CASE_STUDY.md) → [交互 Demo](https://dehydration630.github.io/leitcue-demo/)。
+**总览 / 3 分钟**：本页 → [一页案例](docs/CASE_STUDY.md) → [交互 Demo](https://dehydration630.github.io/leitcue-demo/)。
 
-**产品面试 / 15 分钟**：[用户与问题](docs/RESEARCH.md) → [PRD](docs/PRD.md) → [为什么这样设计](docs/DECISIONS.md) → [评测与模型选型](docs/EVALUATION.md)。
+**产品视角 / 15 分钟**：[用户与问题](docs/RESEARCH.md) → [PRD](docs/PRD.md) → [为什么这样设计](docs/DECISIONS.md) → [评测与模型选型](docs/EVALUATION.md)。
 
-**技术协作 / 20 分钟**：[字段合同](docs/FIELD_FRAMEWORK.md) → [架构](docs/ARCHITECTURE.md) → [可运行核心示例](examples/core.py) → [测试用例](docs/TESTING.md)。
+**技术视角 / 20 分钟**：[字段合同](docs/FIELD_FRAMEWORK.md) → [架构](docs/ARCHITECTURE.md) → [可运行核心示例](examples/core.py) → [测试用例](docs/TESTING.md)。
 
 ## 三个最重要的产品判断
 
@@ -51,7 +49,7 @@
 
 ## 产品架构
 
-模型负责剧情观察与音乐创作，程序负责规则、成本、状态和整集交付。下图是实际 Alpha 的公开脱敏职责图，不是公开静态 Demo 的运行架构。
+模型负责剧情观察与音乐创作，程序负责规则、成本、状态和整集交付。
 
 ![LeitCue 分层产品架构：访问层、产品编排、外部 AI 服务与数据持久化](assets/product-architecture.svg)
 
@@ -93,14 +91,6 @@ python3 scripts/check_publication.py
 ```
 
 示例重点：叙事边界收敛、字段继承、供应商路由、保守源曲去重、预算预留与重复提交防护。它们是为评审重写的教学实现，不能直接用作生产调度器。[示例说明 →](examples/README.md)
-
-## 结果与诚实边界
-
-- 已交付：封闭 Alpha 的上传、分析、可选剧情安排、音乐生成、粗选、混音、局部调整和整集导出；公开仓库仅演示其中的交互与规则。
-- 已观察：项目负责人完成多轮真实视频自测；早期创作者测试既有正向反馈，也有明确拒绝。
-- 尚未证明：产品市场匹配、广泛题材质量、真实付费意愿、稳定留存、精确 tempo map 作曲或自动审美评判。
-- 不公开：真实用户媒体和台词、访谈录音/原文、生产数据库、API 密钥、服务器地址、部署备份、签名下载链接及原仓库历史。
-- 生产服务的供应商账户、额度和运行可用性会变化；招聘方无需依赖生产账号，通过本仓库即可评审主要思路。
 
 ## About / English summary
 
